@@ -200,7 +200,7 @@ function renderSpiralSideView(point_array, number_of_slices, start_radius, end_r
 	}
 }
 
-function generate_spiral() {
+function generateSpiral() {
 	start_radius = Number(document.getElementById("start_radius").value)
 	end_radius = Number(document.getElementById("end_radius").value)
 	height = Number(document.getElementById("height").value)
@@ -318,8 +318,8 @@ function generate_spiral() {
 	11: inner_side, 12: outer_side, 13: current_height, 14: height_step, 15: quarter_height_step}
 }
 
-function generate_vmf() {
-	let output_table = generate_spiral()
+function generateVmf() {
+	let output_table = generateSpiral()
 	let is_face_generated = output_table[0]
 	let point_array = output_table[1]
 	let start_radius = output_table[2]

@@ -16,9 +16,6 @@ body {
 
 .header {
 	top: 0;
-	left: 0;
-	right: 0;
-	position: sticky;
 	width: 100%;
 }
 
@@ -42,15 +39,6 @@ body {
 	text-transform: uppercase;
 	padding-top: 20px;
 }
-
-/* .nav_link {
-	display: inline-block;
-	margin: 0 15px;
-	text-decoration: none;
-	color: #FFFFFF;
-	padding-top: 10px;
-	padding-bottom: 10px;
-} */
 
 .nav_link {
 	display: inline-block;
@@ -95,13 +83,14 @@ body {
 	background-color: rgba(7, 90, 151, 0);
 	color: rgb(178, 205, 223);
 	padding: 10px;
+	margin-bottom: 40px;
 }
 
 .hammer_tools {
 	font-size: 30px;
 }
 
-.spiral_render_container {
+.render_container {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -116,6 +105,11 @@ body {
 	border: 1px solid #000000;
 }
 
+.heightmap_buffer {
+	width: 0;
+	height: 0;
+}
+
 .variable_container {
 	padding: 10px;
 	display: flex;
@@ -128,7 +122,7 @@ body {
 	justify-content: space-between;
 	width: 23%;
 	min-width: 268px;
-	margin: 5px 10px;
+	margin: 5px 5px 5px 5px;
 	border-radius: 4px;
 	box-shadow: 0 0 5px 2px rgb(7, 90, 151);
 }
@@ -140,6 +134,10 @@ body {
 
 .variable_input {
 	width: 49%;
+}
+
+.file_input {
+	margin: 2px 4px;
 }
 
 .download {

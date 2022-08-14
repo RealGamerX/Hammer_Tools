@@ -6,69 +6,70 @@
 		<script src="js/spiral_generator.js"></script>
 		<link rel="stylesheet" href="assets/css/style.css">
 	</head>
-	<body onload="generate_spiral()">
+	<body onload="generateSpiral()">
 		<header class="header">
 			<div class="header_inner">
 				<nav class="nav">
 					<a class="nav_link" href="index.html">hammer tools</a>
 					<a class="nav_link" href="spiral_generator.html">Spiral Generator</a>
+					<a class="nav_link" href="heightmap_generator.html">Heightmap Generator</a>
 				</nav>
 			</div>
 		</header>
 		<div class="content">
-			<div class="spiral_render_container">
+			<div class="render_container">
 				<canvas class="spiral_render" id="spiral_render_top" width="1000px" height="1000px"></canvas>
 				<canvas class="spiral_render" id="spiral_render_side" width="1000px" height="1000px"></canvas>
 			</div>
 			<div class="variable_container">
 				<div class="variable">
 					<span class="variable_name">Start radius</span>
-					<input class="variable_input" type="text" id="start_radius" name="start_radius" value="256" onchange="generate_spiral()">
+					<input class="variable_input" type="number" value=256 min=4 max=16192 id="start_radius" name="start_radius" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 					<span class="variable_name">End radius</span>
-					<input class="variable_input" type="text" id="end_radius" name="end_radius" value="256" onchange="generate_spiral()">
+					<input class="variable_input" type="number" value=256 min=4 max=16192 id="end_radius" name="end_radius" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 					<span class="variable_name">Height</span>
-					<input class="variable_input" type="text" id="height" name="height" value="128" onchange="generate_spiral()">
+					<input class="variable_input" type="number" value=128 min=-16192 max=16192 id="height" name="height" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 					<span class="variable_name">Angle</span>
-					<input class="variable_input" type="text" id="angle" name="angle" value="90" onchange="generate_spiral()">
+					<input class="variable_input" type="number" value=90 id="angle" name="angle" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 					<span class="variable_name">Number of slices</span>
-					<input class="variable_input" type="text" id="number_of_slices" name="number_of_slices" value="16" onchange="generate_spiral()">
+					<input class="variable_input" type="number" value=16 min=1 max=2048 id="number_of_slices" name="number_of_slices" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 					<span class="variable_name">Slice width</span>
-					<input class="variable_input" type="text" id="width" name="width" value="128" onchange="generate_spiral()">
+					<input class="variable_input" type="number" value=128 min=2 max=16192 id="width" name="width" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 					<span class="variable_name">Slice height</span>
-					<input class="variable_input" class="variable_name" type="text" id="slice_height" name="slice_height" value="16" onchange="generate_spiral()">
+					<input class="variable_input" type="number" value=16 min=1 max=16192 id="slice_height" name="slice_height" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 				</div>
 				<div class="variable">
 					<label class="variable_name" for="top_side">Top side</label>
-					<input class="variable_input" type="checkbox" id="top_side" name="top_side" checked onchange="generate_spiral()">
+					<input class="variable_input" type="checkbox" id="top_side" name="top_side" checked onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 					<label class="variable_name" for="bottom_side">Bottom side</label>
-					<input class="variable_input" type="checkbox" id="bottom_side" name="bottom_side" onchange="generate_spiral()">
+					<input class="variable_input" type="checkbox" id="bottom_side" name="bottom_side" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 					<label class="variable_name" for="inner_side">Inner side</label>
-					<input class="variable_input" type="checkbox" id="inner_side" name="inner_side" onchange="generate_spiral()">
+					<input class="variable_input" type="checkbox" id="inner_side" name="inner_side" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
 					<label class="variable_name" for="outer_side">Outer side</label>
-					<input class="variable_input" type="checkbox" id="outer_side" name="outer_side" onchange="generate_spiral()">
+					<input class="variable_input" type="checkbox" id="outer_side" name="outer_side" onchange="generateSpiral()">
 				</div>
 				<div class="variable">
-					<input class="download" type="button" value="Download the VMF file" onclick="generate_vmf(); return false">
+					<input class="download" type="button" value="Download the VMF file" onclick="generateVmf(); return false">
 				</div>
 			</div>
 		</div>

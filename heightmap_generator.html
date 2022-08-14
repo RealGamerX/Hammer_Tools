@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Heightmap Generator</title>
+		<script src="js/heightmap_generator.js"></script>
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+		<header class="header">
+			<div class="header_inner">
+				<nav class="nav">
+					<a class="nav_link" href="index.html">hammer tools</a>
+					<a class="nav_link" href="spiral_generator.html">Spiral Generator</a>
+					<a class="nav_link" href="heightmap_generator.html">Heightmap Generator</a>
+				</nav>
+			</div>
+		</header>
+		<div class="content">
+			<div class="render_container">
+				<canvas class="spiral_render" id="heightmap_render" width="1000px" height="1000px"></canvas>
+				<canvas class="spiral_render" id="alpha_render" width="1000px" height="1000px"></canvas>
+				<img class="heightmap_buffer" id="heightmap_buffer" width="1000px" height="1000px">
+			</div>
+			<div class="variable_container">
+				<div class="variable">
+					<input class="file_input" type="file" accept="image/*" id="heightmap_file" name="heightmap_file" onchange="loadFile(event)">
+				</div>
+				<div class="variable">
+					<label class="variable_name" for="size_x">size X</label>
+					<input class="variable_input" type="number" min=16 max=32512 value=256 id="size_x" name="size_x">
+				</div>
+				<div class="variable">
+					<label class="variable_name" for="size_y">size Y</label>
+					<input class="variable_input" type="number" min=16 max=32512 value=256 id="size_y" name="size_y">
+				</div>
+				<div class="variable">
+					<label class="variable_name" for="size_z">size Z</label>
+					<input class="variable_input" type="number" min=16 max=16192 value=256 id="size_z" name="size_z">
+				</div>
+				<div class="variable">
+					<label class="variable_name" for="num_of_displacements_x">Disp number X</label>
+					<input class="variable_input" type="number" min=1 value=4 id="num_of_displacements_x" name="num_of_displacements_x">
+				</div>
+				<div class="variable">
+					<label class="variable_name" for="num_of_displacements_y">Disp number Y</label>
+					<input class="variable_input" type="number" min=1 value=4 id="num_of_displacements_y" name="num_of_displacements_y">
+				</div>
+				<div class="variable">
+					<label class="variable_name" for="disp_power">Power</label>
+					<input class="variable_input" type="number" min=2 max=4 value=2 id="disp_power" name="disp_power">
+				</div>
+				<div class="variable">
+					<label class="variable_name" for="alpha_cutoff">Alpha cutoff</label>
+					<input class="variable_input" type="number" min=0 max=256 value=0 id="alpha_cutoff" name="alpha_cutoff" onchange="generateHeightmap()">
+				</div>
+				<div class="variable">
+					<input class="download" type="button" value="Download the VMF file" onclick="generateVmf()">
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			High amount of displacements, high power displacements and large displacements may cause an engine hunk error on launch.<br>
+			Make sure to do a test compile and run to see if you get the error.<br>
+			If you encounter this error, try to decrease the lightmap scale on all displacements, reduce the amount of displacements or lower their power.
+		</div>
+	</body>
+</html>
