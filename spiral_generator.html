@@ -18,8 +18,10 @@
 		</header>
 		<div class="content">
 			<div class="render_container">
-				<canvas class="spiral_render" id="spiral_render_top" width="1000px" height="1000px"></canvas>
-				<canvas class="spiral_render" id="spiral_render_side" width="1000px" height="1000px"></canvas>
+				<div class="render_label">Top view</div>
+				<div class="render_label">Side view</div>
+				<canvas class="render_canvas" id="spiral_render_top" width="1000px" height="1000px"></canvas>
+				<canvas class="render_canvas" id="spiral_render_side" width="1000px" height="1000px"></canvas>
 			</div>
 			<div class="variable_container">
 				<div class="variable">
@@ -73,5 +75,13 @@
 				</div>
 			</div>
 		</div>
+		<div class="content">
+			<div class="big_text">
+				All distances are measured in hammer units. The angle is measured in degrees.<br>
+				The spiral is made up out of slices. Start and end radiuses are measured to the outer edge of a slice.<br>
+				Even if only inner side is turned on, the radius is still measured to the outer edge. Same with bottom side and slice height.
+			</div>
+		</div>
+		<br>
 	</body>
 </html>

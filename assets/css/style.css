@@ -8,6 +8,7 @@ body {
 	height: 100vh;
 	background: rgb(80,80,80);
 	background: linear-gradient(rgb(28, 59, 105) 0%, rgb(19, 33, 74) 100%);
+	background-attachment: fixed;
 }
 
 *, *:before, *:after {
@@ -77,6 +78,18 @@ body {
 	clip-path: inset(-20px -20px 0 -20px);
 }
 
+.github_link {
+	color: rgb(178, 205, 223);
+	font-size: 30px;
+	font-weight: bold;
+	transition: all 0.3s ease 0s; 
+}
+
+.github_link:hover {
+	color: #FFFFFF;
+	font-size: 35px;
+}
+
 .content {
 	border-radius: 10px;
 	box-shadow: 0 0 10px 10px rgb(7, 90, 151);
@@ -86,8 +99,9 @@ body {
 	margin-bottom: 40px;
 }
 
-.hammer_tools {
+.big_text {
 	font-size: 30px;
+	text-align: justify;
 }
 
 .render_container {
@@ -96,7 +110,12 @@ body {
 	flex-wrap: wrap;
 }
 
-.spiral_render {
+.render_label {
+	width: 49.5%;
+	font-size: 30px;
+}
+
+.render_canvas {
 	width: 49.5%;
 	height: 49.5%;
     padding-bottom: 0%;

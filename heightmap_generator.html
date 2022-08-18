@@ -18,8 +18,10 @@
 		</header>
 		<div class="content">
 			<div class="render_container">
-				<canvas class="spiral_render" id="heightmap_render" width="1000px" height="1000px"></canvas>
-				<canvas class="spiral_render" id="alpha_render" width="1000px" height="1000px"></canvas>
+				<div class="render_label">Heightmap</div>
+				<div class="render_label">Alpha</div>
+				<canvas class="render_canvas" id="heightmap_render" width="1000px" height="1000px"></canvas>
+				<canvas class="render_canvas" id="alpha_render" width="1000px" height="1000px"></canvas>
 				<img class="heightmap_buffer" id="heightmap_buffer" width="1000px" height="1000px">
 			</div>
 			<div class="variable_container">
@@ -60,9 +62,18 @@
 			</div>
 		</div>
 		<div class="content">
-			High amount of displacements, high power displacements and large displacements may cause an engine hunk error on launch.<br>
-			Make sure to do a test compile and run to see if you get the error.<br>
-			If you encounter this error, try to decrease the lightmap scale on all displacements, reduce the amount of displacements or lower their power.
+			<div class="big_text">
+				File - any image file. Grayscale images work best, but color images will be converted to grayscale automatically.<br>
+				Size X, size Y, size Z - length, width and height of the heightmap in hammer units.<br>
+				Disp number X, disp number Y - amount of displacements in the X and Y directions.<br>
+				Power - power of the displacements. Higher power = more vertices.<br>
+				Alpha cutoff - alpha values below this one will be set to 0, values above this will be set to 255. The render window on the right side shows which parts will have the new alpha values.<br>
+				<br>
+				WARNING: High amount of displacements, high power displacements and large displacements may cause an engine hunk error on launch.<br>
+				Make sure to do a test compile and run to see if you get the error.<br>
+				If you encounter this error, try to decrease the lightmap scale on all displacements, reduce the amount of displacements, or lower their power.
+			</div>
 		</div>
+		<br>
 	</body>
 </html>
